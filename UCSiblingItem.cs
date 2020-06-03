@@ -159,7 +159,7 @@ namespace Studentsiblings
                 if (dr == DialogResult.Yes)
                 {
                     StringBuilder sb_log = new StringBuilder();
-                    sb_log.AppendLine(string.Format("刪除「{0}」兄弟姊妹資料:", _student.Name));
+                    sb_log.AppendLine(string.Format("刪除「{0}」兄弟姊妹資料：", _student.Name));
 
                     List<SiblingRecord> SiblingList = new List<SiblingRecord>();
                     foreach (ListViewItem item in listView1.SelectedItems)

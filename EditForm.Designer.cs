@@ -49,7 +49,7 @@
             this.btnSave.Location = new System.Drawing.Point(124, 230);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 12;
             this.btnSave.Text = "儲存";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -59,7 +59,7 @@
             this.btnExit.Location = new System.Drawing.Point(205, 230);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 1;
+            this.btnExit.TabIndex = 13;
             this.btnExit.Text = "離開";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -70,7 +70,7 @@
             this.lbHelp1.Location = new System.Drawing.Point(40, 24);
             this.lbHelp1.Name = "lbHelp1";
             this.lbHelp1.Size = new System.Drawing.Size(29, 12);
-            this.lbHelp1.TabIndex = 2;
+            this.lbHelp1.TabIndex = 0;
             this.lbHelp1.Text = "稱謂";
             // 
             // tbRemark
@@ -78,7 +78,7 @@
             this.tbRemark.Location = new System.Drawing.Point(92, 193);
             this.tbRemark.Name = "tbRemark";
             this.tbRemark.Size = new System.Drawing.Size(188, 22);
-            this.tbRemark.TabIndex = 3;
+            this.tbRemark.TabIndex = 11;
             // 
             // lbHelp2
             // 
@@ -86,7 +86,7 @@
             this.lbHelp2.Location = new System.Drawing.Point(42, 58);
             this.lbHelp2.Name = "lbHelp2";
             this.lbHelp2.Size = new System.Drawing.Size(29, 12);
-            this.lbHelp2.TabIndex = 4;
+            this.lbHelp2.TabIndex = 2;
             this.lbHelp2.Text = "姓名";
             // 
             // tbName
@@ -94,7 +94,7 @@
             this.tbName.Location = new System.Drawing.Point(92, 53);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(188, 22);
-            this.tbName.TabIndex = 5;
+            this.tbName.TabIndex = 3;
             // 
             // lbHelp3
             // 
@@ -102,7 +102,7 @@
             this.lbHelp3.Location = new System.Drawing.Point(42, 93);
             this.lbHelp3.Name = "lbHelp3";
             this.lbHelp3.Size = new System.Drawing.Size(29, 12);
-            this.lbHelp3.TabIndex = 6;
+            this.lbHelp3.TabIndex = 4;
             this.lbHelp3.Text = "生日";
             // 
             // cbTitle
@@ -116,14 +116,14 @@
             this.cbTitle.Location = new System.Drawing.Point(92, 20);
             this.cbTitle.Name = "cbTitle";
             this.cbTitle.Size = new System.Drawing.Size(188, 20);
-            this.cbTitle.TabIndex = 8;
+            this.cbTitle.TabIndex = 1;
             // 
             // tbClassName
             // 
             this.tbClassName.Location = new System.Drawing.Point(92, 158);
             this.tbClassName.Name = "tbClassName";
             this.tbClassName.Size = new System.Drawing.Size(188, 22);
-            this.tbClassName.TabIndex = 12;
+            this.tbClassName.TabIndex = 9;
             // 
             // lbHelp6
             // 
@@ -131,7 +131,7 @@
             this.lbHelp6.Location = new System.Drawing.Point(42, 198);
             this.lbHelp6.Name = "lbHelp6";
             this.lbHelp6.Size = new System.Drawing.Size(29, 12);
-            this.lbHelp6.TabIndex = 11;
+            this.lbHelp6.TabIndex = 10;
             this.lbHelp6.Text = "備註";
             // 
             // tbSchoolName
@@ -139,7 +139,7 @@
             this.tbSchoolName.Location = new System.Drawing.Point(92, 123);
             this.tbSchoolName.Name = "tbSchoolName";
             this.tbSchoolName.Size = new System.Drawing.Size(188, 22);
-            this.tbSchoolName.TabIndex = 10;
+            this.tbSchoolName.TabIndex = 7;
             // 
             // lbHelp5
             // 
@@ -147,7 +147,7 @@
             this.lbHelp5.Location = new System.Drawing.Point(42, 163);
             this.lbHelp5.Name = "lbHelp5";
             this.lbHelp5.Size = new System.Drawing.Size(29, 12);
-            this.lbHelp5.TabIndex = 9;
+            this.lbHelp5.TabIndex = 8;
             this.lbHelp5.Text = "班級";
             // 
             // lbHelp4
@@ -156,7 +156,7 @@
             this.lbHelp4.Location = new System.Drawing.Point(42, 128);
             this.lbHelp4.Name = "lbHelp4";
             this.lbHelp4.Size = new System.Drawing.Size(29, 12);
-            this.lbHelp4.TabIndex = 13;
+            this.lbHelp4.TabIndex = 6;
             this.lbHelp4.Text = "學校";
             // 
             // tbBirthday
@@ -164,7 +164,7 @@
             this.tbBirthday.Location = new System.Drawing.Point(92, 88);
             this.tbBirthday.Name = "tbBirthday";
             this.tbBirthday.Size = new System.Drawing.Size(188, 22);
-            this.tbBirthday.TabIndex = 7;
+            this.tbBirthday.TabIndex = 5;
             // 
             // EditForm
             // 

@@ -42,7 +42,7 @@
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(299, 139);
+            this.btnNew.Location = new System.Drawing.Point(299, 144);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 23);
             this.btnNew.TabIndex = 0;
@@ -52,20 +52,20 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(380, 139);
+            this.btnEdit.Location = new System.Drawing.Point(380, 144);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 1;
+            this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "修改";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(461, 139);
+            this.btnDelete.Location = new System.Drawing.Point(461, 144);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "刪除";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -83,7 +83,7 @@
             this.listView1.Location = new System.Drawing.Point(14, 8);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(522, 125);
-            this.listView1.TabIndex = 3;
+            this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 

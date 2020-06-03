@@ -58,8 +58,18 @@ namespace Studentsiblings
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            StringBuilder sb_log = new StringBuilder();
+
             if (_sibling == null)
             {
+                sb_log.AppendLine(string.Format("新增學生「{0}」兄弟姊妹資料：", _student.Name));
+                sb_log.AppendLine(string.Format("稱謂「{0}」", cbTitle.Text));
+                sb_log.AppendLine(string.Format("姓名「{0}」", tbName.Text));
+                sb_log.AppendLine(string.Format("生日「{0}」", tbBirthday.Text));
+                sb_log.AppendLine(string.Format("學校「{0}」", tbSchoolName.Text));
+                sb_log.AppendLine(string.Format("班級「{0}」", tbClassName.Text));
+                sb_log.AppendLine(string.Format("備註「{0}」", tbRemark.Text));
+
                 //新增模式
                 _sibling = new SiblingRecord();
                 _sibling.ClassName = tbClassName.Text;
@@ -79,10 +89,31 @@ namespace Studentsiblings
                 _sibling.StudnetID = int.Parse(_student.ID); //包含學生ID
 
                 //將資料儲存置資料庫
-                tool._a.InsertValues(new List<SiblingRecord>() { _sibling });
+                try
+                {
+                    tool._a.InsertValues(new List<SiblingRecord>() { _sibling });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("新增失敗:" + ex.Message);
+                    return;
+                }
+
+                FISCA.LogAgent.ApplicationLog.Log("兄弟姊妹模組", "新增", sb_log.ToString());
+                this.DialogResult = DialogResult.OK;
+
             }
             else
             {
+                sb_log.AppendLine(string.Format("更新學生「 {0} 」兄弟姊妹資料：", _student.Name));
+                sb_log.AppendLine(string.Format("稱謂由「{0}」變更為「{1}」", _sibling.SiblingTitle, cbTitle.Text));
+                sb_log.AppendLine(string.Format("姓名由「{0}」變更為「{1}」", _sibling.SiblingName, tbName.Text));
+                sb_log.AppendLine(string.Format("生日由「{0}」變更為「{1}」", _sibling.Birthday.ToString("yyyy/MM/dd"), tbBirthday.Text));
+                sb_log.AppendLine(string.Format("學校由「{0}」變更為「{1}」", _sibling.SchoolName, tbSchoolName.Text));
+                sb_log.AppendLine(string.Format("班級由「{0}」變更為「{1}」", _sibling.ClassName, tbClassName.Text));
+                sb_log.AppendLine(string.Format("備註由「{0}」變更為「{1}」", _sibling.Remark, tbRemark.Text));
+                sb_log.AppendLine("");
+
                 //更新模式
                 _sibling.ClassName = tbClassName.Text;
 
@@ -99,10 +130,20 @@ namespace Studentsiblings
 
                 //將資料儲存置資料庫
                 //更新不須指定學生ID
-                tool._a.UpdateValues(new List<SiblingRecord>() { _sibling });
-            }
+                try
+                {
+                    tool._a.UpdateValues(new List<SiblingRecord>() { _sibling });
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("更新失敗:" + ex.Message);
+                    return;
+                }
 
-            this.DialogResult = DialogResult.OK;
+
+                FISCA.LogAgent.ApplicationLog.Log("兄弟姊妹模組", "更新", sb_log.ToString());
+                this.DialogResult = DialogResult.OK;
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
