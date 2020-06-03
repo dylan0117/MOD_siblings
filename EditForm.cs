@@ -9,15 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ClassLibrary1
+namespace Studentsiblings
 {
     public partial class EditForm : Form
     {
         StudentRecord _student { get; set; }
         SiblingRecord _sibling { get; set; }
-
-        //檢查日期是否正確
-        DateTime checkDateTime;
 
         /// <summary>
         /// 傳入學生資料,為新增模式
@@ -27,11 +24,6 @@ namespace ClassLibrary1
             InitializeComponent();
 
             _student = student;
-
-            List<UDTTable> list = new List<UDTTable>();
-            tool._a.InsertValues(list);
-            tool._a.UpdateValues(list);
-            tool._a.DeletedValues(list);
         }
 
         /// <summary>
@@ -55,7 +47,7 @@ namespace ClassLibrary1
             tbClassName.Text = _sibling.ClassName;
 
 
-            checkDateTime = _sibling.Birthday;
+            DateTime checkDateTime = _sibling.Birthday;
             tbBirthday.Text = checkDateTime.ToString("yyyy/MM/dd");
 
             tbSchoolName.Text = _sibling.SchoolName;
@@ -66,9 +58,6 @@ namespace ClassLibrary1
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //檢查日期格式是否正確
-            DateTime.TryParse(tbBirthday.Text, out checkDateTime);
-
             if (_sibling == null)
             {
                 //新增模式
@@ -76,6 +65,8 @@ namespace ClassLibrary1
                 _sibling.ClassName = tbClassName.Text;
 
                 //如果生日有輸入,且是日期格式
+                DateTime checkDateTime;
+                DateTime.TryParse(tbBirthday.Text, out checkDateTime);
                 if (!string.IsNullOrEmpty(tbBirthday.Text) && checkDateTime != null)
                     _sibling.Birthday = checkDateTime;
 
@@ -96,6 +87,8 @@ namespace ClassLibrary1
                 _sibling.ClassName = tbClassName.Text;
 
                 //生日格式正確才儲存
+                DateTime checkDateTime;
+                DateTime.TryParse(tbBirthday.Text, out checkDateTime);
                 if (checkDateTime != null)
                     _sibling.Birthday = checkDateTime;
 
@@ -110,6 +103,11 @@ namespace ClassLibrary1
             }
 
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

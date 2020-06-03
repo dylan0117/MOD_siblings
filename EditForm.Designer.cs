@@ -1,4 +1,4 @@
-﻿namespace ClassLibrary1
+﻿namespace Studentsiblings
 {
     partial class EditForm
     {
@@ -56,13 +56,13 @@
             // 
             // btnExit
             // 
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.No;
             this.btnExit.Location = new System.Drawing.Point(205, 230);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "離開";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lbHelp1
             // 

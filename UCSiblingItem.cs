@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ClassLibrary1
+namespace Studentsiblings
 {
     /// <summary>
     /// 權限代碼定義與顯示名稱
@@ -40,6 +40,7 @@ namespace ClassLibrary1
         /// </summary>
         protected override void OnPrimaryKeyChanged(EventArgs e)
         {
+            //轉圈圈開始轉動
             this.Loading = true;
 
             //對象的系統編號
@@ -89,6 +90,7 @@ namespace ClassLibrary1
             }
             //沒有更新需求,則建置畫面
             List<SiblingRecord> siblingsList = (List<SiblingRecord>)e.Result;
+            //將資料設定到畫面上
             BindData(siblingsList);
 
             //轉圈圈停止
@@ -114,7 +116,9 @@ namespace ClassLibrary1
                 item.SubItems.Add(each.ClassName); //班級
                 item.SubItems.Add(each.Remark); //備註
 
+                //把原本的UDT資料儲存在TAG
                 item.Tag = each;
+                //加入畫面上
                 listView1.Items.Add(item);
             }
         }
@@ -148,17 +152,45 @@ namespace ClassLibrary1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            //使用者確定有選取資料
             if (listView1.SelectedItems.Count > 0)
             {
-                DialogResult dr = MessageBox.Show("是否刪除資料", "警告", MessageBoxButtons.YesNo);
+                DialogResult dr = MessageBox.Show("是否刪除資料?", "警告", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
+                    StringBuilder sb_log = new StringBuilder();
+                    sb_log.AppendLine(string.Format("刪除「{0}」兄弟姊妹資料:", _student.Name));
+
                     List<SiblingRecord> SiblingList = new List<SiblingRecord>();
                     foreach (ListViewItem item in listView1.SelectedItems)
                     {
-                        SiblingList.Add((SiblingRecord)item.Tag);
+                        SiblingRecord sibling = (SiblingRecord)item.Tag;
+                        SiblingList.Add(sibling);
+
+                        sb_log.AppendLine(string.Format("稱謂「{0}」", sibling.SiblingTitle));
+                        sb_log.AppendLine(string.Format("姓名「{0}」", sibling.SiblingName));
+                        sb_log.AppendLine(string.Format("生日「{0}」", sibling.Birthday.ToString("yyyy/MM/dd")));
+                        sb_log.AppendLine(string.Format("學校「{0}」", sibling.SchoolName));
+                        sb_log.AppendLine(string.Format("班級「{0}」", sibling.ClassName));
+                        sb_log.AppendLine(string.Format("備註「{0}」", sibling.Remark));
+                        sb_log.AppendLine("");
                     }
-                    tool._a.DeletedValues(SiblingList);
+
+                    //開始刪除資料
+                    try
+                    {
+                        tool._a.DeletedValues(SiblingList);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("刪除失敗:" + ex.Message);
+                        return;
+                    }
+
+                    FISCA.LogAgent.ApplicationLog.Log("兄弟姊妹模組", "刪除", sb_log.ToString());
+
+                    //刪除後更新畫面
+                    _bgw.RunWorkerAsync();
                 }
                 else
                 {

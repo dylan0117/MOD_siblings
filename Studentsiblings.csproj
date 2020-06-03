@@ -7,8 +7,8 @@
     <ProjectGuid>{3858128B-AD36-4E2B-A292-C90833D7A103}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibrary1</RootNamespace>
-    <AssemblyName>ClassLibrary1</AssemblyName>
+    <RootNamespace>Studentsiblings</RootNamespace>
+    <AssemblyName>Studentsiblings</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -50,6 +50,11 @@
     <Reference Include="FISCA.DSAUtil, Version=3.9.0.10, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Library\FISCA.DSAUtil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.LogAgent, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MyJob_Desktop\Github\MOD_Behavior.Report\日常生活表現預警表\日常生活表現預警表\Library\FISCA.LogAgent.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="FISCA.Permission, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -111,6 +116,7 @@
     <Content Include="Library\FISCA.Data.dll" />
     <Content Include="Library\FISCA.dll" />
     <Content Include="Library\FISCA.DSAUtil.dll" />
+    <Content Include="Library\FISCA.LogAgent.dll" />
     <Content Include="Library\FISCA.Permission.dll" />
     <Content Include="Library\FISCA.Presentation.dll" />
     <Content Include="Library\FISCA.UDT.dll" />
